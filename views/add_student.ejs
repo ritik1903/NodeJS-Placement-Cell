@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('_bootstrap_meta')%>
+		<title>Create Student Form</title>
+	</head>
+
+	<body style="background-color: #e6e9e9">
+		<%- include('_header') %>
+		<form
+			class="w-50 mx-auto mt-4"
+			action="/students/create-student"
+			method="post"
+			style="
+				height: 100%;
+				display: grid;
+				place-content: center;
+				background: white;
+				border-radius: 5px;
+				box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
+				padding: 50px 70px;
+			"
+		>
+			<h3 style="text-align: center">Add Student</h3>
+			<fieldset>
+				<label for="batch">Batch</label>
+				<div class="mb-3">
+					<input type="text" class="form-control" id="batch" name="batch" />
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<div class="mb-3">
+					<label for="name" class="form-label">Name</label>
+					<input type="text" class="form-control" id="name" name="name" />
+				</div>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email address</label>
+					<input type="email" class="form-control" id="email" placeholder="abc@gmail.com" name="email" />
+				</div>
+				<div class="mb-3">
+					<label for="contactNumber" class="form-label">Mobile Number</label>
+					<input type="text" class="form-control" id="contactNumber" name="contactNumber" />
+				</div>
+				<div class="mb-3">
+					<label for="college" class="form-label">College Name</label>
+					<input type="text" class="form-control" id="college" name="college" />
+				</div>
+				<div class="mb-3">
+					<label for="placement" class="form-label">Placement Status</label>
+					<select class="form-select" aria-label="Default select example" name="placement" id="placement">
+						<option value="Placed">Placed</option>
+						<option value="Not Placed">Not Placed</option>
+					</select>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<div class="mb-3" style="display: flex; justify-content: space-between">
+					<div class="mb-3 p-1">
+						<label for="dsa" class="form-label">DSA</label>
+						<input type="text" class="form-control" id="dsa" name="dsa" />
+					</div>
+					<div class="mb-3 p-1">
+						<label for="webd" class="form-label">Web Development</label>
+						<input type="text" class="form-control" id="webd" name="webd" />
+					</div>
+					<div class="mb-3 p-1">
+						<label for="react" class="form-label">React</label>
+						<input type="text" class="form-control" id="react" name="react" />
+					</div>
+				</div>
+			</fieldset>
+			<button type="submit" class="btn btn-success align-self-center">Create Student</button>
+		</form>
+		<%- include('_bootstrap_script')%>
+	</body>
+</html>

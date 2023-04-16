@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('_bootstrap_meta')%>
+		<title>Home</title>
+		<style></style>
+	</head>
+
+	<body>
+		<%- include('_header') %>
+		<div class="w-75 mx-auto mt-5">
+			<br />
+
+			<div class="row">
+				<div class="col-6">
+					<h2>List of Students:</h2>
+				</div>
+
+				<div class="col-6 d-flex justify-content-end">
+					<a href="/students/create" type="button" class="btn btn-success align-self-center">+ Add Student</a>
+				</div>
+			</div>
+
+			<% if(students.length > 0) {%>
+			<div class="mt-3 mb-3">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Batch</th>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Contact</th>
+							<th scope="col">DSA</th>
+							<th scope="col">WEB</th>
+							<th scope="col">REACT</th>
+							<th scope="col">Interview</th>
+							<th scope="col" class="text-end">Action</th>
+						</tr>
+					</thead>
+
+					<tbody id="myTable">
+						<% for(let student of students) {%>
+						<tr>
+							<th scope="row"><%=student.batch%></th>
+							<td><%=student.name%></td>
+							<td><%=student.email%></td>
+							<td><%=student.contactNumber%></td>
+							<td><%=student.dsa%></td>
+							<td><%=student.webd%></td>
+							<td><%=student.react%></td>
+							<% if(student.interviews.length) {%>
+							<td>
+								<% for(let company of student.interviews){%>
+								<a href=" " id="compnay_name"><%=company.company%></a>
+								<%}%>
+							</td>
+							<%}else{%>
+							<td>NONE</td>
+							<%}%>
+							<td style="display: flex; justify-content: space-around; align-items: center">
+								<a href="/students/delete/<%=student.id%>" type="button" class="btn btn-danger btn-small">Delete</a>
+							</td>
+						</tr>
+						<%}%>
+					</tbody>
+				</table>
+			</div>
+			<%}else{%>
+			<div class="w-75 mx-auto mt-5">
+				<h2>No Records Found</h2>
+			</div>
+			<%}%>
+		</div>
+		<%- include('_bootstrap_script')%>
+	</body>
+</html>

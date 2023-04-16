@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('_bootstrap_meta')%>
+    <link rel="stylesheet" href="/css/interview.css">
+    <title>Schedule Interview</title>
+  </head>
+
+  <body style="background-color: #E6E9E9 ;">
+    <%- include('_header') %>
+<div class="container">
+  <form
+  class="w-60 mx-auto mt-4" action="/company/schedule-interview" method="post" style="height: 60vh; display: grid; place-content: center; width: 530px; background: white; border-radius: 5px; box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);">
+  <h3 style="margin-bottom: 50px; color: black;">Schedule Interview</h3>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <select class="form-select" aria-label="Default select example" name="id" id="name">
+    <option selected disabled>Select Student</option>
+
+    <%for(let student of students){%>
+    <option value="<%=student.id%>"><%= student.name %></option>
+    <%}%>
+  </select></select>
+  </div>
+
+  <div class="mb-3">
+    <label for="company" class="form-label">Company</label>
+    <input type="text" class="form-control" id="company" name="company"/>
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-control" id="date" name="date" />
+  </div>
+
+      <button class="btn btn-success align-self-center">
+        Schedule Interview
+      </button>
+</form>
+</div>
+    
+    <%- include('_bootstrap_script')%>
+  </body>
+</html>

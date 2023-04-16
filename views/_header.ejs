@@ -1,0 +1,15 @@
+<header>
+	<% if (locals.user) { %>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">Placement Cell</a>
+			<a class="navbar-brand" href="/">Welcome <%=locals.user.name%></a>
+			<form class="d-flex px-4">
+				<a class="navbar-brand p-2" href="/company/home">Company List</a>
+				<a class="navbar-brand p-2" href="/users/download-csv">Download Report</a>
+				<a class="navbar-brand p-2" href="/users/signout" style="background-color: red; border-radius: 5px">Sign out</a>
+			</form>
+		</div>
+	</nav>
+	<% } %>
+</header>

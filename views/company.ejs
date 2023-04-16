@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('_bootstrap_meta')%>
+
+		<title>Company Home</title>
+	</head>
+
+	<body>
+		<%- include('_header') %>
+		<div class="w-75 mx-auto mt-5">
+			<div class="row">
+				<div class="col-6">
+					<h1>Interviews</h1>
+				</div>
+
+				<div class="col-6 d-flex justify-content-end">
+					<a href="/company/allocate" type="button" class="btn btn-success align-self-center">Allocate Interview</a>
+				</div>
+			</div>
+
+			<% if(students.length > 0) {%>
+			<div class="mt-3 mb-3">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Company</th>
+							<th scope="col">Student</th>
+							<th scope="col">Email</th>
+							<th scope="col">Contact</th>
+							<th scope="col">Batch</th>
+							<th scope="col">InterviewDate</th>
+							<th scope="col">Result</th>
+						</tr>
+					</thead>
+
+					<tbody id="myTable">
+						<% for(let student of students){%> <%i=0%> <% while(i< student.interviews.length){%>
+						<tr class="row-ref">
+							<th scope="row"><%=student.interviews[i].company%></th>
+							<td><%=student.name%></td>
+							<td><%=student.email%></td>
+							<td><%=student.contactNumber%></td>
+							<td><%=student.batch%></td>
+							<td><%=student.interviews[i].date%></td>
+							<td>
+								<form
+									style="display: flex; align-items: center; justify-content: center"
+									action="/company/update-status/<%=student.id%>"
+									method="post"
+								>
+									<input hidden type="text" name="companyName" value="<%=student.interviews[i].company%>" />
+
+									<select class="form-select" aria-label="Default select example" name="companyResult" id="status" style="min-width: 130px">
+										<option selected id="delete-options"><%=student.interviews[i].result%></option>
+										<option value="Selected">Selected</option>
+										<option value="Not Selected">Not Selected</option>
+										<option value="On Hold">On Hold</option>
+										<option value="Pending">Pending</option>
+									</select>
+
+									<button type="submit" class="btn btn-warning btn-small m-2">Update</button>
+								</form>
+							</td>
+						</tr>
+						<%i++%> <%}%> <%}%>
+					</tbody>
+				</table>
+			</div>
+			<%}else{%>
+			<div class="w-75 mx-auto mt-5">
+				<h2>No Records found</h2>
+			</div>
+
+			<%}%>
+		</div>
+		<%- include('_bootstrap_script')%>
+	</body>
+</html>
