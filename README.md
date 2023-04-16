@@ -17,13 +17,13 @@
   ![Sign-Up](./images/signup.PNG)
 
 - Sign In
-  ![Sign-In](./images/signin.PNG)
+  ![Sign-In](./images/login.PNG)
 
 - Student Page
-  ![Student-Page](./images/student_list.PNG)
+  ![Student-Page](./images/studentlist.PNG)
 
 - Interview Page
-  ![Interview-Page](./images/company_list.PNG)
+  ![Interview-Page](./images/companylist.PNG)
 
 - Add student
   ![Add-Student](./images/add_student.PNG)
