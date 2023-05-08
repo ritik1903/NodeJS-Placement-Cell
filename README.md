@@ -26,7 +26,7 @@
   ![Interview-Page](./images/CompanyList.PNG)
 
 - Add student
-  ![Add-Student](images\AddStudent.PNG)
+  ![Add-Student](./images/AddStudent.PNG)
 
 - Schedule Interview
   ![Interview](./images/InterviewSchedule.PNG)
