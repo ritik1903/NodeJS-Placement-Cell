@@ -14,22 +14,22 @@
 ## Screenshots
 
 - Sign Up
-  ![Sign-Up](./images/signup.PNG)
+  ![Sign-Up](./images/SignUp.PNG)
 
 - Sign In
-  ![Sign-In](./images/login.PNG)
+  ![Sign-In](./images/Login.PNG)
 
 - Student Page
-  ![Student-Page](./images/studentlist.PNG)
+  ![Student-Page](./images/StudentList.PNG)
 
 - Interview Page
-  ![Interview-Page](./images/companylist.PNG)
+  ![Interview-Page](./images/CompanyList.PNG)
 
 - Add student
-  ![Add-Student](./images/add_student.PNG)
+  ![Add-Student](./images/AddStudent.PNG)
 
 - Schedule Interview
-  ![Interview](./images/schedule_interview.PNG)
+  ![Interview](./images/InterviewSchedule.PNG)
 
 ## Setup
 
